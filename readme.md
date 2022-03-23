@@ -24,7 +24,10 @@ clone the project
 git clone https://github.com/codeit-ninja/stream-movies.git
 ```
 
-Run `npm install`
+Install dependecies 
+```
+npm install
+```
 
 Then serve the project locally
 
