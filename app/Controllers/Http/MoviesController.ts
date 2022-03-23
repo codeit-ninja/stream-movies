@@ -35,7 +35,7 @@ export default class MoviesController {
             return [];
         }
         
-        return Promise.all(movies.results.map( async (movie: Required<MovieResult>) => await Movie.create(movie.id)));
+        return await Promise.all(movies.results.map( async (movie: Required<MovieResult>) => await Movie.create(movie.id)));
     }
 
     /**
