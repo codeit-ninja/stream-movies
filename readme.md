@@ -1,10 +1,10 @@
 # Stream movies (back-end)
----
+
 This is only the back-end and is written in NodeJS. Can be used to create a VOD service.
 
 Currently only https://yts.mx is implemented. This is enough for the majority of movies out there currently.
 
-### How does it work?
+## How does it work?
 
 It works by searching for torrents via the https://yts.mx API based on a IMDb ID.
 
@@ -14,19 +14,23 @@ If it successfully fetched torrents, it will parse all the playable media files 
 
 All methods to do so are exposed via the API.
 
-### Installation
+## Installation
 
 Make sure NodeJS v16+ is installed. Versions lower than that might work but is not tested.
 
 clone the project
 
-``git clone https://github.com/codeit-ninja/stream-movies.git``
+```
+git clone https://github.com/codeit-ninja/stream-movies.git
+```
 
 Run `npm install`
 
 Then serve the project locally
 
-`node ace serve --watch`
+```
+node ace serve --watch
+```
 
 Redis is used as caching layer by this project.
 
@@ -55,7 +59,7 @@ REDIS_PASSWORD=                 // Optional (depends what you configured in redi
 
 *This project was created in a WSL 2 Linux envoirment, you might run into problems when running it on windows. The problem might come from the `FFprobe` binaries.
 
-### Api endpoints
+## Api endpoints
 
 | Route | Description | Note |
 | ----------- | ----------- | ----------- |
