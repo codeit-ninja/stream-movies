@@ -1,9 +1,5 @@
-import Env from '@ioc:Adonis/Core/Env'
-import Route from '@ioc:Adonis/Core/Route'
-import Redis from '@ioc:Adonis/Addons/Redis'
 import { providers } from '../app/app'
 import { search } from 'yify-promise'
-import { getMetadata } from './stream'
 import NoTorrentsFoundException from 'App/Exceptions/NoTorrentsFoundException'
 import WebTorrent from 'webtorrent'
 
@@ -65,8 +61,14 @@ export default class Torrents {
      */
     public static async download(magnetUri: string, opts?: { destroyStoreOnDestroy: true }): Promise<WebTorrent.Torrent> {
         return new Promise((resolve, reject) => {
-            providers.webtorrent.add(magnetUri, opts, torrent => {
-                torrent.on('error', (err) => reject(err));
+            const webtorrent = new WebTorrent({
+                maxConns: 10
+            });
+            webtorrent.add(magnetUri, opts, torrent => {
+                torrent.on('error', (err) => {
+                    reject(err)
+                    webtorrent.destroy();
+                });
                 torrent.once('download', () => resolve(torrent));
             })
         })

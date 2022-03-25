@@ -111,6 +111,8 @@ export default class Stream {
              * browser not responding
              */
             setTimeout( () => {
+                torrent.destroy();
+
                 clearInterval(validationInterval);
                 resolve(null);
             }, 60000)
@@ -126,9 +128,10 @@ export default class Stream {
                     clearInterval(validationInterval);
 
                     if( await hasSupportedCodecs( videoFile.path ) ) {
-                        torrent.destroy()
                         return resolve(videoFile);
                     }
+
+                    torrent.destroy();
 
                     return resolve(null);
                 }
