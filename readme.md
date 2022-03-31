@@ -4,11 +4,11 @@ This is the development branch of version 2. Alot of things will change.
 
 **Some of the key features which will be implemented in v2**
 
-&nbsp;&nbsp;&nbsp;&nbsp;👉 &nbsp;Support for TV shows
-&nbsp;&nbsp;&nbsp;&nbsp;👉 &nbsp;MySQL database with IMDb data (so we dont have to rely on 3rd party API's)
-&nbsp;&nbsp;&nbsp;&nbsp;👉 &nbsp;Redis caching layer
-&nbsp;&nbsp;&nbsp;&nbsp;👉 &nbsp;Thepiratebay integration
-&nbsp;&nbsp;&nbsp;&nbsp;👉 &nbsp;Subtitles integration (opensubtitles.org)
+&nbsp;&nbsp;&nbsp;&nbsp;👉 &nbsp;Support for TV shows    
+&nbsp;&nbsp;&nbsp;&nbsp;👉 &nbsp;MySQL database with IMDb data (so we dont have to rely on 3rd party API's)    
+&nbsp;&nbsp;&nbsp;&nbsp;👉 &nbsp;Redis caching layer    
+&nbsp;&nbsp;&nbsp;&nbsp;👉 &nbsp;Thepiratebay integration    
+&nbsp;&nbsp;&nbsp;&nbsp;👉 &nbsp;Subtitles integration (opensubtitles.org)    
 
 ## ⚡How does it work?
 
@@ -25,7 +25,7 @@ All methods to do so are exposed via the API.
 *This project was created in a WSL 2 Linux envoirment, you might run into problems when running it on windows. The problem might come from the `FFprobe` binaries.
 
 ###### Status development
-&nbsp;&nbsp;&nbsp;&nbsp;✅ TV show endpoints implemented
+&nbsp;&nbsp;&nbsp;&nbsp;✅ TV show endpoints implemented    
 &nbsp;&nbsp;&nbsp;&nbsp;✅ IMDb data implemented
 
 ## ⚡Api endpoints
