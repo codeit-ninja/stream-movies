@@ -1,6 +1,6 @@
 // import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Movie from '../../../models/Movie';
-import { providers } from '../../../app/app'
+import { providers } from '../../../app/app';
 import { MovieResult } from 'moviedb-promise/dist/request-types';
 
 export default class MoviesController {

@@ -34,7 +34,8 @@
             "@adonisjs/repl",
             "@adonisjs/drive-s3",
             "@adonisjs/session",
-            "@adonisjs/redis"
+            "@adonisjs/redis",
+            "@adonisjs/lucid"
         ]
     }
 }

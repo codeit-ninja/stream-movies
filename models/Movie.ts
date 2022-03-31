@@ -1,5 +1,4 @@
 import { providers } from '../app/app'
-import { MovieResponse } from 'moviedb-promise/dist/request-types'
 
 export default class Movie {
     public static async create(id: number) {

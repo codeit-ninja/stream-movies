@@ -107,7 +107,7 @@ export default class Stream {
             videoFile.createReadStream({ start: 0, end: 32428800 });
 
             /**
-             * Resolve after 60 seconds to prevent user 
+             * Resolve after X seconds to prevent user 
              * browser not responding
              */
             setTimeout( () => {
@@ -115,7 +115,7 @@ export default class Stream {
 
                 clearInterval(validationInterval);
                 resolve(null);
-            }, 60000)
+            }, 30000)
 
             const validationInterval = setInterval( async () => {
                 console.log('Is downloading', torrent.downloaded);
@@ -124,15 +124,29 @@ export default class Stream {
                  * Only start validating when we downloaded 30MB
                  * This to make sure the file can be parsed by FFProbe
                  */
-                if( torrent.downloaded > 32428800 ) {
+                if( torrent.downloaded > 15428800 ) {
                     clearInterval(validationInterval);
 
                     if( await hasSupportedCodecs( videoFile.path ) ) {
+                        /**
+                         * Removes torrent and stops the download
+                         * 
+                         * This is very important, we don't want the server
+                         * to bleed memory and bandwith
+                         */
+                        torrent.destroy();
+                        
                         return resolve(videoFile);
                     }
 
+                    /**
+                     * Removes torrent and stops the download
+                     * 
+                     * This is very important, we don't want the server
+                     * to bleed memory and bandwith
+                     */
                     torrent.destroy();
-
+                    
                     return resolve(null);
                 }
             }, 1000)

@@ -1,12 +1,12 @@
-import Env from '@ioc:Adonis/Core/Env'
-import Route from '@ioc:Adonis/Core/Route'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import Env from '@ioc:Adonis/Core/Env';
+import Route from '@ioc:Adonis/Core/Route';
+import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
 import { supportedCodecs } from '../config/streaming';
-import ffprobe from 'ffprobe'
-import ffprobeStatic from 'ffprobe-static'
+import ffprobe from 'ffprobe';
+import ffprobeStatic from 'ffprobe-static';
 import Torrents, { TorrentType } from './torrents';
 import Stream, { StreamTypeRequired } from './stream';
-import { TorrentFile } from 'webtorrent'
+import { TorrentFile } from 'webtorrent';
 
 export async function hasSupportedCodecs(file: string): Promise<boolean> {
     return new Promise(resolve => {
