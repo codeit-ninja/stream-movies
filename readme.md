@@ -24,7 +24,7 @@ All methods to do so are exposed via the API.
 
 *This project was created in a WSL 2 Linux envoirment, you might run into problems when running it on windows. The problem might come from the `FFprobe` binaries.
 
-##### Status development
+#### Status development
 &nbsp;&nbsp;&nbsp;&nbsp;✅ TV show endpoints implemented    
 &nbsp;&nbsp;&nbsp;&nbsp;✅ IMDb data implemented
 
