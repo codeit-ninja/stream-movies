@@ -10,7 +10,7 @@ This is the development branch of version 2. Alot of things will change.
 &nbsp;&nbsp;&nbsp;&nbsp;👉 &nbsp;Thepiratebay integration    
 &nbsp;&nbsp;&nbsp;&nbsp;👉 &nbsp;Subtitles integration (opensubtitles.org)    
 
-## ⚡How does it work?
+### ⚡How does it work?
 
 It works by searching for torrents via the https://yts.mx API based on a IMDb ID.
 
@@ -20,15 +20,15 @@ If it successfully fetched torrents, it will parse all the playable media files 
 
 All methods to do so are exposed via the API.
 
-## ⚡ Development
+### ⚡ Development
 
 *This project was created in a WSL 2 Linux envoirment, you might run into problems when running it on windows. The problem might come from the `FFprobe` binaries.
 
-###### Status development
+##### Status development
 &nbsp;&nbsp;&nbsp;&nbsp;✅ TV show endpoints implemented    
 &nbsp;&nbsp;&nbsp;&nbsp;✅ IMDb data implemented
 
-## ⚡Api endpoints
+### ⚡Api endpoints
 
 | Route                     | Description                                                                                    | Note                                                                                             |
 | ------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
