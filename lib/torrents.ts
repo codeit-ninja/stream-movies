@@ -1,4 +1,3 @@
-import { providers } from '../app/app'
 import { search } from 'yify-promise'
 import NoTorrentsFoundException from 'App/Exceptions/NoTorrentsFoundException'
 import WebTorrent from 'webtorrent'
@@ -35,7 +34,7 @@ export default class Torrents {
      */
     public static async search( imdbId: string ) {
         const result = await search({ query_term: imdbId }, { createMagnets: true });
-
+        
         if( ! result.movies || result.movies.length === 0) {
             throw new NoTorrentsFoundException();
         }

@@ -34,12 +34,16 @@ Route.group(() => {
     Route.get('/test', 'MoviesController.test');
 }).prefix('movies')
 Route.group(() => {
-    Route.get('/latest', 'SeriesController.latest');
-    Route.get('/popular', 'SeriesController.popular');
-    Route.get('/now-playing', 'SeriesController.nowPlaying');
-    Route.get('/top-rated', 'SeriesController.topRated');
-    Route.get('/hype/', 'SeriesController.hype');
-    Route.get('/watch/:imdbId', 'SeriesController.stream');
-}).prefix('series')
+    Route.get('/latest', 'shows/ShowsController.latest');
+    Route.get('/popular', 'shows/ShowsController.popular');
+    Route.get('/now-playing', 'shows/ShowsController.nowPlaying');
+    Route.get('/top-rated', 'shows/ShowsController.topRated');
+    Route.get('/featured', 'shows/ShowsController.hype');
+    Route.get('/watch/:name/:season/:episode/:imdbId', 'shows/ShowsController.stream');
+
+    Route.group(() => {
+        Route.get('/:showId/:seasonId', 'shows/seasons/SeasonsController.getSeason')
+    }).prefix('seasons')
+}).prefix('shows')
 Route.get('import', 'ImportersController.start')
 Route.get('import/ratings', 'ImportersController.ratings')

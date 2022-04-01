@@ -1,31 +1,33 @@
 {
-  "typescript": true,
-  "commands": [
-    "./commands",
-    "@adonisjs/core/build/commands/index.js",
-    "@adonisjs/repl/build/commands",
-    "@adonisjs/lucid/build/commands"
-  ],
-  "exceptionHandlerNamespace": "App/Exceptions/Handler",
-  "aliases": {
-    "App": "app",
-    "Config": "config",
-    "Database": "database",
-    "Contracts": "contracts"
-  },
-  "preloads": [
-    "./start/routes",
-    "./start/kernel"
-  ],
-  "providers": [
-    "./providers/AppProvider",
-    "@adonisjs/core",
-    "@adonisjs/drive-s3",
-    "@adonisjs/session",
-    "@adonisjs/redis",
-    "@adonisjs/lucid"
-  ],
-  "aceProviders": [
-    "@adonisjs/repl"
-  ]
+    "typescript": true,
+    "commands": [
+        "./commands",
+        "@adonisjs/core/build/commands/index.js",
+        "@adonisjs/repl/build/commands",
+        "@adonisjs/lucid/build/commands"
+    ],
+    "exceptionHandlerNamespace": "App/Exceptions/Handler",
+    "aliases": {
+        "Lib": "lib",
+        "App": "app",
+        "Config": "config",
+        "Database": "database",
+        "Contracts": "contracts",
+        "Models": "models"
+    },
+    "preloads": [
+        "./start/routes",
+        "./start/kernel"
+    ],
+    "providers": [
+        "./providers/AppProvider",
+        "@adonisjs/core",
+        "@adonisjs/drive-s3",
+        "@adonisjs/session",
+        "@adonisjs/redis",
+        "@adonisjs/lucid"
+    ],
+    "aceProviders": [
+        "@adonisjs/repl"
+    ]
 }

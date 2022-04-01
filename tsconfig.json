@@ -10,6 +10,7 @@
     "compilerOptions": {
         "resolveJsonModule": true,
         "outDir": "build",
+        "baseUrl": ".",
         "rootDir": "./",
         "sourceMap": true,
         "paths": {
@@ -27,6 +28,9 @@
             ],
             "Lib/*": [
                 "./lib/*"
+            ],
+            "Models/*": [
+                "./models/*"
             ]
         },
         "types": [

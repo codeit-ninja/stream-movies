@@ -1,9 +1,10 @@
-// import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-
+import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { providers } from "App/app";
-import Serie from "../../../models/Serie";
+import Serie from "../../../../models/Serie";
 import { TvResult } from "moviedb-promise/dist/request-types";
 import Rating from "App/Models/Rating";
+import { torrentProviders } from 'Config/streaming'
+import { SearchParamsType } from 'Lib/providers/EztvProvider';
 
 export default class SeriesController {
     /**
@@ -80,6 +81,12 @@ export default class SeriesController {
     public async hype() {
         const popular = await this.popular()
         // @ts-ignore its never undefined but returns 0 instead which is valid
-        return popular.sort((a, b) => b.vote_count - a.vote_count).slice(6, 7)[0];
+        return popular.sort((a, b) => b.vote_count - a.vote_count)[0];
+    }
+
+    public async stream({ request }: HttpContextContract) {      
+        const providers = new torrentProviders.eztv();
+
+        return providers.search(request.params() as SearchParamsType)
     }
 }

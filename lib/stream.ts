@@ -76,10 +76,12 @@ export default class Stream {
         if( await Redis.exists(imdbId) ) {
             return new Stream(imdbId, JSON.parse(await Redis.get(imdbId) as string));
         }
-
+        
         const torrents = await Torrents.search(imdbId);
         const streams = await Promise.all(torrents.map(async torrent => await generateMeta(imdbId, torrent)));
 
+
+        return;
         /** Cache result for future use */
         await Redis.set(imdbId, JSON.stringify(streams));
 
